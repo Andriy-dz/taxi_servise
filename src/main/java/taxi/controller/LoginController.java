@@ -1,4 +1,4 @@
-package mate.controller;
+package taxi.controller;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -7,17 +7,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import mate.exception.AuthenticationException;
-import mate.lib.Injector;
-import mate.model.Driver;
-import mate.service.AuthenticationService;
+import taxi.exception.AuthenticationException;
+import taxi.lib.Injector;
+import taxi.model.Driver;
+import taxi.service.AuthenticationService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 @WebServlet(urlPatterns = "/login")
 public class LoginController extends HttpServlet {
     private static final String ID = "driver_id";
-    private static final Injector injector = Injector.getInstance("mate");
+    private static final Injector injector = Injector.getInstance("taxi");
     private static final Logger logger = LogManager.getLogger(LoginController.class);
     private final AuthenticationService authenticationService =
             (AuthenticationService) injector.getInstance(AuthenticationService.class);
